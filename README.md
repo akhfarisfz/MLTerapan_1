@@ -46,26 +46,45 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 - Price : informasi harga tiket pesawat terbang.
 
 Dari dataset, diketahui terdapat  11 variabel (fitur). Selanjutnya pemahaman data bisa kita lakukan dengan melihat informasi tipe data, keunikan setiap colum dengan teknik countplot dari seaborn seperti dibawah ini:
+
 ![Gambar Fitur Airline](https://github.com/akhfarisfz/MLTerapan_1/blob/cfc935685dfae2f8480395d0de8435ca66ccbe12/Airlines.png)
+
 Fitur Airline
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Arrival%20Time.png)
+
 Fitur Arrival Time
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Departure%20Time.png)
+
 Fitur Departure Time
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Destination%20City.png)
+
 Fitur Destination City
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Source%20City.png)
+
 Fitur Source City
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Stops.png)
+
 Fitur Stops
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Prive.png)
+
 Fitur Price 
 
 Selain itu, Visualisasi data price dan day left
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Day_left.png)
+
 Day left vs Price
+
 visualisasi dilakukan antara fitur airline dengan price
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/price%20vs%20airline.png)
+
 Price vs airlines
 
 
