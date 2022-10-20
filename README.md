@@ -47,7 +47,7 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 
 Dari dataset, diketahui terdapat  11 variabel (fitur). Selanjutnya pemahaman data bisa kita lakukan dengan melihat informasi tipe data, keunikan setiap colum dengan teknik countplot dari seaborn seperti dibawah ini:
 
-![Gambar Fitur Airline](https://github.com/akhfarisfz/MLTerapan_1/blob/cfc935685dfae2f8480395d0de8435ca66ccbe12/Airlines.png)
+![Gambar Fitur Airline](https://raw.githubusercontent.com/akhfarisfz/MLTerapan_1/main/Airlines.png?token=GHSAT0AAAAAAB2EQMNT45MME3ZUOQSEWJK6Y2Q3BUQ)
 
 Fitur Airline
 
@@ -106,14 +106,30 @@ Adakalanya pada dataset, fitur memiliki rentang value yang berbeda beda. Sehingg
 
 ## Modeling
 
-Dalam proses pemodelan digunkakan beberapa model yang digunakan. Model model yang digunakan disesuaikan dengan data yang digunakan. Berikut ini adalah model model yang digunakan antara lain 
-- K Nearest-Neighbour (KNN), sebuah model yang mengklasifikasikan objek berdasarkan jarak yang paling dekat. KNN memiliki kelebihan mudah digunakan karena sederhana namun kekurangannya akurasi dalam mengklasifikasi kan fitur yang tidak relevan dan bias lainnya. Model ini cocok dengan proyek ini karena dataset yang digunakan masih sederhana mendapatkan hasil prediksi yang paling baik
-- RadomForest,  merupakan pengembangan dari metode CART,yaitu dengan menerapkan metode bootstrap aggregating (bagging) dan random feature selection(Samudra,2019).Tujuannya adalah mengklasifikasikan data dalam jumlah besar.Cara kerjanya adalah meningkatkan keacakan pada model sembari meningkatkan tree. Random forest memiliki kelebihan dapat mendeteksi dan membersihkan noise dan missing value.
-- AdaBoost adalah algoritma ensemble yang memanfaatkan bagging dan boosting untuk mengembangkan peningkatan akurasi prediktor(Kurniawati,2021).Adaboost memiliki kelebihan memiliki algoritma yang sederhana dan membutuhkan waktu yang singkat sehingga cocok dengan data proyek yang digunakan
+Dalam proses pemodelan digunkakan beberapa model yang digunakan. Model model yang digunakan disesuaikan dengan data yang digunakan. Tahapan pada model yang dilakukan pada data train dan test antara lain :
+- K Nearest-Neighbour (KNN), sebuah model yang mengklasifikasikan objek berdasarkan jarak yang paling dekat. KNN memiliki kelebihan mudah digunakan karena sederhana namun kekurangannya akurasi dalam mengklasifikasi kan fitur yang tidak relevan dan bias lainnya. Model ini cocok dengan proyek ini karena dataset yang digunakan masih sederhana mendapatkan hasil prediksi yang paling baik. Pada modeling ini menggunakan data mean square error dari data train dan test.KNN yang dipilih menggunakan parameter k=10 dan metric Euclidean
+- RadomForest,  merupakan pengembangan dari metode CART,yaitu dengan menerapkan metode bootstrap aggregating (bagging) dan random feature selection(Samudra,2019).Tujuannya adalah mengklasifikasikan data dalam jumlah besar.Cara kerjanya adalah meningkatkan keacakan pada model sembari meningkatkan tree. Random forest memiliki kelebihan dapat mendeteksi dan membersihkan noise dan missing value.Parameter yang digunakan pada proyek ini antara lain 
+    - n_estimator merupakan jumlah pohon di struktur forest.Pada proyek, menggunakan set 50 trees(pohon)
+    - max_depth: kedalaman tree(pohon). Pada proyek ini di set max depth=16
+    - random_state: random generator. Pada proyek ini digunakan bernilai 55
+    - n_jobs: Bernilai -1 artinya semua proses berjalan secara paralel.
+- AdaBoost adalah algoritma ensemble yang memanfaatkan bagging dan boosting untuk mengembangkan peningkatan akurasi prediktor(Kurniawati,2021).Adaboost memiliki kelebihan memiliki algoritma yang sederhana dan membutuhkan waktu yang singkat sehingga cocok dengan data proyek yang digunakan.Ada beberapa parameter yang digunakan antara lain:
+    - learning_rate: bobot yang diterapkan pada setiap regressor.Ditentukan learning rate sebesar 0.05
+    - random_state: random generator. Pada proyek ini digunakan bernilai 55 
 
 ## Evaluation
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
 
+Tahap evaluasi dari dari proyek ini menggunakan metrik MSE (Mean Squarred Error) dalam proses dari semua model yang digunakan. Metrik ini menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.MSE didefinisikan sebagai berikut
+
+![MSE](https://raw.githubusercontent.com/akhfarisfz/MLTerapan_1/c71920a263e03e704769a5c4c8f840235e0d8492/MSE.png?token=GHSAT0AAAAAAB2EQMNTWHMR6XEMZFORLJ2CY2Q27FA)
+
+Menggunakan MSE, didapatkan hasil seperti berikut :
+![Hasil prediksi](https://raw.githubusercontent.com/akhfarisfz/MLTerapan_1/main/Summary_1.png?token=GHSAT0AAAAAAB2EQMNTUCWXBI34PKPT3T5GY2Q3IGA)
+
+![Hasil prediksi bar](https://raw.githubusercontent.com/akhfarisfz/MLTerapan_1/main/Prediction_summary.png?token=GHSAT0AAAAAAB2EQMNSEK2JWGJJCSQKDUUAY2Q3GAA)
+
+Dari data di atas 
 Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
 - Penjelasan mengenai metrik yang digunakan
 - Menjelaskan hasil proyek berdasarkan metrik evaluasi
@@ -128,6 +144,7 @@ Referensi :
 - Bathwal,Shubham.2022.https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction(diakses pada 20 Oktober 2022)
 - YASMIN54301.2022.https://www.kaggle.com/code/yasmin54301/flight-price-prediction(diakses pada 20 Oktober 2022)
 - Samudra,Agenda Yudha.2019.PENDEKATAN RANDOM FOREST UNTUK MODEL PERAMALAN HARGA TEMBAKAU RAJANGAN DI KABUPATEN TEMANGGUNG
+
 
 **---Ini adalah bagian akhir laporan---**
 
