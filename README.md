@@ -1,6 +1,6 @@
 # Laporan Proyek Machine Learning - Akh.Faris Farhan Zaima
 
-## Latar Belakang
+## Domain Proyek
 
 Transportasi adalah salah satu bagian dari kehidupan sehari hari manusia. Berbagai macam transportasi yang tersedia mulai dari transportasi darat, laut, dan udara.Tujuan dari dibuatnya transportasi adalah memudahkan seseorang berpindah ke suatu tempat dengan waktu yang sesingkat mungkin. Ada banyak jenis transportasi yang digunakan, mulai dari sepeda, mobil, kapal laut dan lain lain. Pesawat merupakan salah satu transportasi umum yang sering digunakan oleh banyak orang, terutama bagi orang yang ingin pergi ke suatu tempat yang jauh dalam waktu yang cepat. Dengan pelayanan tersebut, pastinya ada harga yang perlu dibayarkan untuk mendapatkan pelayanan tersebut. Terdapat banyak parameter yang mempengaruhi tinggi rendahnya harga tiket untuk pesawat , mulai dari jarak tempuh, seberapa mampu untuk terbang, teknologi yang digunakan dan banyak hal lainnya. Harga harga tersebut sudah diprediksikan dan ditentukan oleh maskapai dan pihak negara. 
 
@@ -46,7 +46,30 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 - Price : informasi harga tiket pesawat terbang.
 
 Dari dataset, diketahui terdapat  11 variabel (fitur). Selanjutnya pemahaman data bisa kita lakukan dengan melihat informasi tipe data, keunikan setiap colum dengan teknik countplot dari seaborn seperti dibawah ini:
-![Fitur Airline](https://github.com/akhfarisfz/MLTerapan_1/blob/cfc935685dfae2f8480395d0de8435ca66ccbe12/Airlines.png)
+![Gambar Fitur Airline](https://github.com/akhfarisfz/MLTerapan_1/blob/cfc935685dfae2f8480395d0de8435ca66ccbe12/Airlines.png)
+Fitur Airline
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Arrival%20Time.png)
+Fitur Arrival Time
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Departure%20Time.png)
+Fitur Departure Time
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Destination%20City.png)
+Fitur Destination City
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Source%20City.png)
+Fitur Source City
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Stops.png)
+Fitur Stops
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Prive.png)
+Fitur Price 
+
+Selain itu, Visualisasi data price dan day left
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Day_left.png)
+Day left vs Price
+visualisasi dilakukan antara fitur airline dengan price
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/price%20vs%20airline.png)
+Price vs airlines
+
+
+
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
