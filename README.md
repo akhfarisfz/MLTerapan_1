@@ -87,26 +87,29 @@ visualisasi dilakukan antara fitur airline dengan price
 
 Price vs airlines
 
+Visualisasi data ditampilkan menggunakan teknik countplot dimana menghitung setiap value unik pada fitur tujuan. Tujuannya visualisasi data ini adalah selain mendapatkan visual secara umum, dapat digunakan untuk melihat apakah ada value yang janggal pada data bertipe kategori. Visualisasi pada data yang bertipe numerik dilakukan dengan berbagai plot seprti pie plot, line plot, dan lain lain tujuannya untuk mengetahui hubungan antar fitur sehingga mendapatkan gambaran umum bagaimana hubungan antar fitur  sebelum dicari kebenarannya melalui data preparation.
 
+Selanjutnya adalah Eksploratory Data Analysis. EDA digunakan untuk "membersihkan" data dari data data yang tidak valid sehingga tidak mempengaruhi efisiensi hasil nantinya. EDA dilakukan pada data dengan cara  mengetahui variabel data dengan fungsi info() dan fungsi describe(). Selanjutnya menghilangkan missing value, outlier, dan melakukan filtering dengan InterQuartile.
+Teknik Univariate dan Multivariate digunkan untuk melihat secara numerik bagaimana hubungan antar fitur sehingga mendapatkan data yang sudah "bersih".
 
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Data preparation merupakan tahap dimana kita melakukan konversi data sampai cocok dengan proses pemodelan selanjutnya. Adapun teknik yang digunakan antara lain transofrmasi data dengan encoding data, feature engineering pembagian data train dan test menggunakan fungsi train_test_split dari library sklearn, dan  Standarisasi menggunakan StandardScaller. 
+
+Encoder menggunakan teknik one-hot-encoding tujuannya melakukan tranformasi data bertipe kategori menjadi value numerik(1,2,3,..). Teknik ini diperlukan agar selanjutnya fitur ini bisa masukkan ke dalam data test dan train sehingga mempengaruhi model nantinya.
+
+Metode pembagian data menggunakan fungsi train_test_split  digunakan untuk evaluasi performa pada model machine learning. Metode ini akan membagi dataset0 menjadi dua bagian bagian yang digunakan untuk training data dan untuk testing data. Pada proyek ini, digunakan proporsi training:test sebesar 66:33.
+
+Adakalanya pada dataset, fitur memiliki rentang value yang berbeda beda. Sehingga algoritma perlu memakan waktu yang cukup lama untuk memrposes model. Untuk memudahkan pemrosesan model algoritma adalah menyederhanakan data agar mendekati distribusi normal. Standasasi membantu agar fitur diubah menjadi bentuk yang lebih mudah diproses oleh algoritma 
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+Dalam proses pemodelan digunkakan beberapa model yang digunakan. Model model yang digunakan disesuaikan dengan data yang digunakan. Berikut ini adalah model model yang digunakan antara lain 
+- K Nearest-Neighbour (KNN), sebuah model yang mengklasifikasikan objek berdasarkan jarak yang paling dekat. KNN memiliki kelebihan mudah digunakan karena sederhana namun kekurangannya akurasi dalam mengklasifikasi kan fitur yang tidak relevan dan bias lainnya. Model ini cocok dengan proyek ini karena dataset yang digunakan masih sederhana mendapatkan hasil prediksi yang paling baik
+- RadomForest,  merupakan pengembangan dari metode CART,yaitu dengan menerapkan metode bootstrap aggregating (bagging) dan random feature selection(Samudra,2019).Tujuannya adalah mengklasifikasikan data dalam jumlah besar.Cara kerjanya adalah meningkatkan keacakan pada model sembari meningkatkan tree. Random forest memiliki kelebihan dapat mendeteksi dan membersihkan noise dan missing value.
+- AdaBoost adalah algoritma ensemble yang memanfaatkan bagging dan boosting untuk mengembangkan peningkatan akurasi prediktor(Kurniawati,2021).Adaboost memiliki kelebihan memiliki algoritma yang sederhana dan membutuhkan waktu yang singkat sehingga cocok dengan data proyek yang digunakan
 
 ## Evaluation
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
@@ -120,9 +123,12 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
+Referensi :
+
+- Bathwal,Shubham.2022.https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction(diakses pada 20 Oktober 2022)
+- YASMIN54301.2022.https://www.kaggle.com/code/yasmin54301/flight-price-prediction(diakses pada 20 Oktober 2022)
+- Samudra,Agenda Yudha.2019.PENDEKATAN RANDOM FOREST UNTUK MODEL PERAMALAN HARGA TEMBAKAU RAJANGAN DI KABUPATEN TEMANGGUNG
+
 **---Ini adalah bagian akhir laporan---**
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
 
