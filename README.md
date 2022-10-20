@@ -46,7 +46,7 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 - Price : informasi harga tiket pesawat terbang.
 
 Dari dataset, diketahui terdapat  11 variabel (fitur). Selanjutnya pemahaman data bisa kita lakukan dengan melihat informasi tipe data, keunikan setiap colum dengan teknik countplot dari seaborn seperti dibawah ini:
-![Fitur Airline](Airlines.png](https://github.com/akhfarisfz/MLTerapan_1/blob/cfc935685dfae2f8480395d0de8435ca66ccbe12/Airlines.png)
+![Fitur Airline](https://github.com/akhfarisfz/MLTerapan_1/blob/cfc935685dfae2f8480395d0de8435ca66ccbe12/Airlines.png)
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
