@@ -101,28 +101,34 @@ Price vs airlines
 
 Gambar 8. Barplot antara Fitur Price dan Airline
 
-Visualisasi data ditampilkan menggunakan teknik countplot dimana menghitung setiap value unik pada fitur tujuan. Tujuannya visualisasi data ini adalah selain mendapatkan visual secara umum, dapat digunakan untuk melihat apakah ada value yang janggal pada data bertipe kategori. Visualisasi pada data yang bertipe numerik dilakukan dengan berbagai plot seprti *pie plot*, *line plot*, dan lain lain tujuannya untuk mengetahui hubungan antar fitur sehingga mendapatkan gambaran umum bagaimana hubungan antar fitur  sebelum dicari kebenarannya melalui data preparation.
+Visualisasi data ditampilkan menggunakan teknik countplot dimana menghitung setiap value unik pada fitur tujuan. Tujuannya visualisasi data ini adalah selain mendapatkan visual secara umum, dapat digunakan untuk melihat apakah ada value yang janggal pada data bertipe kategori. Visualisasi pada data yang bertipe numerik dilakukan dengan berbagai *plot* seprti *pie plot*, *line plot*, dan lain lain tujuannya untuk mengetahui hubungan antar fitur sehingga mendapatkan gambaran umum bagaimana hubungan antar fitur  sebelum dicari kebenarannya melalui data preparation.
 
-Selanjutnya adalah Eksploratory Data Analysis. EDA digunakan untuk "membersihkan" data dari data data yang tidak valid sehingga tidak mempengaruhi efisiensi hasil nantinya. EDA dilakukan pada data dengan cara  mengetahui variabel data dengan fungsi info() dan fungsi describe(). Selanjutnya menghilangkan *missing value*, *outlier*, dan melakukan filtering dengan *InterQuartile*.
-Teknik Univariate dan Multivariate digunkan untuk melihat secara numerik bagaimana hubungan antar fitur sehingga mendapatkan data yang sudah "bersih".Adapun berikut ini adalah hasil outlier yang dilakukan pada beberapa fitur :
+Selanjutnya adalah Eksploratory Data Analysis. EDA digunakan untuk "membersihkan" data dari data data yang tidak valid sehingga tidak mempengaruhi efisiensi hasil nantinya. EDA dilakukan pada data dengan cara  mengetahui variabel data dengan fungsi info() dan fungsi describe(). Selanjutnya menghilangkan *missing value*, *outlier*, dan melakukan *filtering* dengan *InterQuartile*.
+Teknik *Univariate* dan *Multivariate* digunkan untuk melihat secara numerik bagaimana hubungan antar fitur sehingga mendapatkan data yang sudah "bersih".Adapun berikut ini adalah hasil *outlier* yang dilakukan pada beberapa fitur :
 
-![Gambar Outlier pada Price]()
+![Gambar Outlier pada Price](https://github.com/akhfarisfz/MLTerapan_1/blob/20bf494b68bb175e352d004416a3e15a6aba179b/duration.png)
 
-Gambar 9. Pengecekan Outlier pada Price
+Gambar 9. Pengecekan *Outlier* pada *Price*
 
-![Gambar Outlier pada duration]()
+![Gambar Outlier pada duration](https://github.com/akhfarisfz/MLTerapan_1/blob/20bf494b68bb175e352d004416a3e15a6aba179b/DURASI_OUTLIER.png)
+
+Gambar 10.Hasil pengecekan *outlier* pada fitur *duration*
 
 
 ## Data Preparation
 
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-Data preparation merupakan tahap dimana kita melakukan konversi data sampai cocok dengan proses pemodelan selanjutnya. Adapun teknik yang digunakan antara lain transofrmasi data dengan encoding data, feature engineering pembagian data train dan test menggunakan fungsi train_test_split dari library sklearn, dan  Standarisasi menggunakan StandardScaller. 
+*Data preparation* merupakan tahap dimana kita melakukan konversi data sampai cocok dengan proses pemodelan selanjutnya. Adapun teknik yang digunakan antara lain:
 
-Encoder menggunakan teknik one-hot-encoding tujuannya melakukan tranformasi data bertipe kategori menjadi value numerik(1,2,3,..). Teknik ini diperlukan agar selanjutnya fitur ini bisa masukkan ke dalam data test dan train sehingga mempengaruhi model nantinya.
+- transofrmasi data dengan *encoding data*
+- *Feature engineering* pembagian data *train* dan *test* menggunakan fungsi train_test_split dari library sklearn,
+- Standarisasi menggunakan StandardScaller. 
 
-Metode pembagian data menggunakan fungsi train_test_split  digunakan untuk evaluasi performa pada model machine learning. Metode ini akan membagi dataset0 menjadi dua bagian bagian yang digunakan untuk training data dan untuk testing data. Pada proyek ini, digunakan proporsi training:test sebesar 80:20.
+Perlakuan pada dataset ini dilakukan dengan teknik seperti berikut:
 
-Adakalanya pada dataset, fitur memiliki rentang value yang berbeda beda. Sehingga algoritma perlu memakan waktu yang cukup lama untuk memrposes model. Untuk memudahkan pemrosesan model algoritma adalah menyederhanakan data agar mendekati distribusi normal. Standasasi membantu agar fitur diubah menjadi bentuk yang lebih mudah diproses oleh algoritma 
+- Encoder menggunakan teknik *one-hot-encoding* tujuannya melakukan tranformasi data bertipe kategori menjadi value numerik(1,2,3,..). Teknik ini diperlukan agar selanjutnya fitur ini bisa masukkan ke dalam data test dan train sehingga mempengaruhi model nantinya.
+- Metode pembagian data menggunakan fungsi train_test_split  digunakan untuk evaluasi performa pada model machine learning. Metode ini akan membagi *dataset* menjadi dua bagian bagian yang digunakan untuk training data dan untuk testing data. Pada proyek ini, digunakan proporsi training:test sebesar 80:20.
+- Adakalanya pada dataset, fitur memiliki rentang value yang berbeda beda. Sehingga algoritma perlu memakan waktu yang cukup lama untuk memrposes model. Untuk memudahkan pemrosesan model algoritma adalah menyederhanakan data agar mendekati distribusi normal. Standasasi membantu agar fitur diubah menjadi bentuk yang lebih mudah diproses oleh algoritma 
 
 ## Modeling
 
@@ -142,12 +148,21 @@ Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda
 
 Tahap evaluasi dari dari proyek ini menggunakan metrik MSE (Mean Squarred Error) dalam proses dari semua model yang digunakan. Metrik ini menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.MSE didefinisikan sebagai berikut
 
-![MSE](https://raw.githubusercontent.com/akhfarisfz/MLTerapan_1/c71920a263e03e704769a5c4c8f840235e0d8492/MSE.png?token=GHSAT0AAAAAAB2EQMNTWHMR6XEMZFORLJ2CY2Q27FA)
+$$MSE={1\over N}\sum_{i=0}^{N}(y_i -y_{pred_i})^2$$
 
 Menggunakan MSE, didapatkan hasil seperti berikut :
-![Hasil prediksi](https://raw.githubusercontent.com/akhfarisfz/MLTerapan_1/main/Summary_1.png?token=GHSAT0AAAAAAB2EQMNTUCWXBI34PKPT3T5GY2Q3IGA)
 
-![Hasil prediksi bar](https://raw.githubusercontent.com/akhfarisfz/MLTerapan_1/main/Prediction_summary.png?token=GHSAT0AAAAAAB2EQMNSEK2JWGJJCSQKDUUAY2Q3GAA)
+Tabel 1.Hasil prediksi algoritma *KNN*,*Random Forest*,dan *AdaBoosting*
+|          	|      Test     	|     Train     	|
+|----------	|:-------------:	|:-------------:	|
+| RF       	| 373650.593225 	| 304105.211741 	|
+| KNN      	| 391874.360483 	|  321010.03323 	|
+| Boosting 	| 391432.621488 	| 389021.837711 	|
+
+
+![Hasil prediksi bar](https://github.com/akhfarisfz/MLTerapan_1/blob/20bf494b68bb175e352d004416a3e15a6aba179b/Prediction_summary.png)
+
+Gambar 11. Hasil prediksi menggunakan *bar plot*
 
 Dari data di atas 
 Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
