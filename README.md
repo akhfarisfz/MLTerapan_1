@@ -150,6 +150,14 @@ Tahap evaluasi dari dari proyek ini menggunakan metrik MSE (Mean Squarred Error)
 
 $$MSE={1\over N}\sum_{i=0}^{N}(y_i -y_{pred_i})^2$$
 
+Keterangan :
+
+N = jumlah dataset
+
+$y_i$ = nilai sebenarnya
+
+$y_{pred}$ = nilai prediksi
+
 Menggunakan MSE, didapatkan hasil seperti berikut :
 
 Tabel 1.Hasil prediksi algoritma *KNN*,*Random Forest*,dan *AdaBoosting*
