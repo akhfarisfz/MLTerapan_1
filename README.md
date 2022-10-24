@@ -4,7 +4,7 @@
 
 Transportasi adalah salah satu bagian dari kehidupan sehari hari manusia. Berbagai macam transportasi yang tersedia mulai dari transportasi darat, laut, dan udara.Tujuan dari dibuatnya transportasi adalah memudahkan seseorang berpindah ke suatu tempat dengan waktu yang sesingkat mungkin. Ada banyak jenis transportasi yang digunakan, mulai dari sepeda, mobil, kapal laut dan lain lain. Pesawat merupakan salah satu transportasi umum yang sering digunakan oleh banyak orang, terutama bagi orang yang ingin pergi ke suatu tempat yang jauh dalam waktu yang cepat. Dengan pelayanan tersebut, pastinya ada harga yang perlu dibayarkan untuk mendapatkan pelayanan tersebut. Terdapat banyak parameter yang mempengaruhi tinggi rendahnya harga tiket untuk pesawat , mulai dari jarak tempuh, seberapa mampu untuk terbang, teknologi yang digunakan dan banyak hal lainnya. Harga harga tersebut sudah diprediksikan dan ditentukan oleh maskapai dan pihak negara. 
 
-Sebagai perusahaan maskapai perlu melakukan prediksi harga melalui data data yang sudah ada. Analisa harga pasar melalui prediksi ini sangat penting agar sebuah perusahaan mampu berkembang di tengah persaingan maskapai-maskapai yang lain. Dengan demikian, setiap perusahaan harus mampu mempertahankan kelangsungan hidup perusahaan tersebut sebagai organisasi.(Tjiptono,2008). Prediksi ini dilakukan dengan mendapatkan data dari berbagai media yang kemudian dilakukan prediksi dengan berbagai algoritma seperti KNN,RandomForest dan AdaBoosting. Dari hasil prediksi tersebut kemudian dilakukan evaluasi agar didapatkan hasil prediksi yang terbaik.
+Sebagai perusahaan maskapai perlu melakukan prediksi harga melalui data data yang sudah ada. Analisa harga pasar melalui prediksi ini sangat penting agar sebuah perusahaan mampu berkembang di tengah persaingan maskapai-maskapai yang lain. Dengan demikian, setiap perusahaan harus mampu mempertahankan kelangsungan hidup perusahaan tersebut sebagai organisasi [1]. Prediksi ini dilakukan dengan mendapatkan data dari berbagai media yang kemudian dilakukan prediksi dengan berbagai algoritma seperti *KNN* ,*RandomForest* dan *AdaBoosting*. Dari hasil prediksi tersebut kemudian dilakukan evaluasi agar didapatkan hasil prediksi yang terbaik.
 
 
 ## Business Understanding
@@ -21,16 +21,14 @@ Bagian laporan ini mencakup:
 
 ### Goals
 Adapun tujuan disusun antara lain :
-- Mengetahui model dapat memprediksi dengan baik melalui proses prediksi dan scoring
+- Mengetahui model dapat memprediksi sebuah model
 - Mengetahui algoritma terbaik dengan melakukan perbandingan terhadap nilai prediksi dari semua algoritma yang ada
-- Penggunaan algoritma KNN, Random Forest dan Boosting sebagai algoritma untuk mencapai solusi  yang diinginkan
 - Mendapatkan fitur yang paling berpengaruh terhadap harga tiket
+
 
 ## Data Understanding
 
-Dataset yang digunakan adalah dataset yang berisikan data data penerbangan berikut dengan harga untuk setiap penerbangan. Dataset ini merupakan data penerbangan pesawat di 6 kota besar di India yang diperoleh dari situs Kaggle [Flight Price Prediction](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction). Data tersebut telah dibersihkan oleh pemilik akun kaggle SHUBHAM BATHWAL. Dataset terdiri atas 300261 baris data dengan 11 variabel. 
-
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+Dataset yang digunakan adalah dataset yang berisikan data data penerbangan berikut dengan harga untuk setiap penerbangan. Dataset ini merupakan data penerbangan pesawat di 6 kota besar di India yang diperoleh dari situs Kaggle [Flight Price Prediction](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction)[2]. Dataset terdiri atas 300261 baris data dengan 11 variabel. 
 
 ### Variabel-variabel pada Flight Price Prediction dataset adalah sebagai berikut:
 - Airlines: Nama maskapai penerbangan yang tersimpan dalam kolom airlines
@@ -47,50 +45,72 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 
 Dari dataset, diketahui terdapat  11 variabel (fitur). Selanjutnya pemahaman data bisa kita lakukan dengan melihat informasi tipe data, keunikan setiap colum dengan teknik countplot dari seaborn seperti dibawah ini:
 
-![Gambar Fitur Airline](https://raw.githubusercontent.com/akhfarisfz/MLTerapan_1/main/Airlines.png?token=GHSAT0AAAAAAB2EQMNT45MME3ZUOQSEWJK6Y2Q3BUQ)
-
 Fitur Airline
 
-![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Arrival%20Time.png)
+![Gambar Fitur Airline](https://github.com/akhfarisfz/MLTerapan_1/blob/d640fd048ec5add64898943bcfde1b85128760e0/Airlines.png)
+
+Gambar 1.Persentase setiap Airplane pada dataset
 
 Fitur Arrival Time
 
-![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Departure%20Time.png)
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Arrival%20Time.png)
+
+Gambar 2.Countplot fitur Arrival Time
 
 Fitur Departure Time
 
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Departure%20Time.png)
+
+Gambar 3. Countplot Departure Time
+
+Fitur Destination Fitur City
+
 ![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Destination%20City.png)
 
-Fitur Destination City
-
-![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Source%20City.png)
+Gambar 4. Countplot Fitur Destination City
 
 Fitur Source City
 
-![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Stops.png)
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Source%20City.png)
+
+Gambar 5. Countplot Fitur Source City
 
 Fitur Stops
 
-![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Prive.png)
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Stops.png)
+
+Gambar 6. Countplot Fitur Stops
 
 Fitur Price 
 
-Selain itu, Visualisasi data price dan day left
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Prive.png)
 
-![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Day_left.png)
+Gambar 6. Countplot Fitur Stops
+
+Selain itu, Visualisasi data price dan day left
 
 Day left vs Price
 
-visualisasi dilakukan antara fitur airline dengan price
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/Day_left.png)
 
-![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/price%20vs%20airline.png)
+Gambar 7. Plot antara Fitur Day Left dan Price
 
 Price vs airlines
 
-Visualisasi data ditampilkan menggunakan teknik countplot dimana menghitung setiap value unik pada fitur tujuan. Tujuannya visualisasi data ini adalah selain mendapatkan visual secara umum, dapat digunakan untuk melihat apakah ada value yang janggal pada data bertipe kategori. Visualisasi pada data yang bertipe numerik dilakukan dengan berbagai plot seprti pie plot, line plot, dan lain lain tujuannya untuk mengetahui hubungan antar fitur sehingga mendapatkan gambaran umum bagaimana hubungan antar fitur  sebelum dicari kebenarannya melalui data preparation.
+![Gambar](https://github.com/akhfarisfz/MLTerapan_1/blob/88bd95ae0fd2f0e77669579ad452a7266f0c2c72/price%20vs%20airline.png)
 
-Selanjutnya adalah Eksploratory Data Analysis. EDA digunakan untuk "membersihkan" data dari data data yang tidak valid sehingga tidak mempengaruhi efisiensi hasil nantinya. EDA dilakukan pada data dengan cara  mengetahui variabel data dengan fungsi info() dan fungsi describe(). Selanjutnya menghilangkan missing value, outlier, dan melakukan filtering dengan InterQuartile.
-Teknik Univariate dan Multivariate digunkan untuk melihat secara numerik bagaimana hubungan antar fitur sehingga mendapatkan data yang sudah "bersih".
+Gambar 8. Barplot antara Fitur Price dan Airline
+
+Visualisasi data ditampilkan menggunakan teknik countplot dimana menghitung setiap value unik pada fitur tujuan. Tujuannya visualisasi data ini adalah selain mendapatkan visual secara umum, dapat digunakan untuk melihat apakah ada value yang janggal pada data bertipe kategori. Visualisasi pada data yang bertipe numerik dilakukan dengan berbagai plot seprti *pie plot*, *line plot*, dan lain lain tujuannya untuk mengetahui hubungan antar fitur sehingga mendapatkan gambaran umum bagaimana hubungan antar fitur  sebelum dicari kebenarannya melalui data preparation.
+
+Selanjutnya adalah Eksploratory Data Analysis. EDA digunakan untuk "membersihkan" data dari data data yang tidak valid sehingga tidak mempengaruhi efisiensi hasil nantinya. EDA dilakukan pada data dengan cara  mengetahui variabel data dengan fungsi info() dan fungsi describe(). Selanjutnya menghilangkan *missing value*, *outlier*, dan melakukan filtering dengan *InterQuartile*.
+Teknik Univariate dan Multivariate digunkan untuk melihat secara numerik bagaimana hubungan antar fitur sehingga mendapatkan data yang sudah "bersih".Adapun berikut ini adalah hasil outlier yang dilakukan pada beberapa fitur :
+
+![Gambar Outlier pada Price]()
+
+Gambar 9. Pengecekan Outlier pada Price
+
+![Gambar Outlier pada duration]()
 
 
 ## Data Preparation
@@ -100,7 +120,7 @@ Data preparation merupakan tahap dimana kita melakukan konversi data sampai coco
 
 Encoder menggunakan teknik one-hot-encoding tujuannya melakukan tranformasi data bertipe kategori menjadi value numerik(1,2,3,..). Teknik ini diperlukan agar selanjutnya fitur ini bisa masukkan ke dalam data test dan train sehingga mempengaruhi model nantinya.
 
-Metode pembagian data menggunakan fungsi train_test_split  digunakan untuk evaluasi performa pada model machine learning. Metode ini akan membagi dataset0 menjadi dua bagian bagian yang digunakan untuk training data dan untuk testing data. Pada proyek ini, digunakan proporsi training:test sebesar 66:33.
+Metode pembagian data menggunakan fungsi train_test_split  digunakan untuk evaluasi performa pada model machine learning. Metode ini akan membagi dataset0 menjadi dua bagian bagian yang digunakan untuk training data dan untuk testing data. Pada proyek ini, digunakan proporsi training:test sebesar 80:20.
 
 Adakalanya pada dataset, fitur memiliki rentang value yang berbeda beda. Sehingga algoritma perlu memakan waktu yang cukup lama untuk memrposes model. Untuk memudahkan pemrosesan model algoritma adalah menyederhanakan data agar mendekati distribusi normal. Standasasi membantu agar fitur diubah menjadi bentuk yang lebih mudah diproses oleh algoritma 
 
@@ -108,12 +128,12 @@ Adakalanya pada dataset, fitur memiliki rentang value yang berbeda beda. Sehingg
 
 Dalam proses pemodelan digunkakan beberapa model yang digunakan. Model model yang digunakan disesuaikan dengan data yang digunakan. Tahapan pada model yang dilakukan pada data train dan test antara lain :
 - K Nearest-Neighbour (KNN), sebuah model yang mengklasifikasikan objek berdasarkan jarak yang paling dekat. KNN memiliki kelebihan mudah digunakan karena sederhana namun kekurangannya akurasi dalam mengklasifikasi kan fitur yang tidak relevan dan bias lainnya. Model ini cocok dengan proyek ini karena dataset yang digunakan masih sederhana mendapatkan hasil prediksi yang paling baik. Pada modeling ini menggunakan data mean square error dari data train dan test.KNN yang dipilih menggunakan parameter k=10 dan metric Euclidean
-- RadomForest,  merupakan pengembangan dari metode CART,yaitu dengan menerapkan metode bootstrap aggregating (bagging) dan random feature selection(Samudra,2019).Tujuannya adalah mengklasifikasikan data dalam jumlah besar.Cara kerjanya adalah meningkatkan keacakan pada model sembari meningkatkan tree. Random forest memiliki kelebihan dapat mendeteksi dan membersihkan noise dan missing value.Parameter yang digunakan pada proyek ini antara lain 
+- RadomForest,  merupakan pengembangan dari metode CART,yaitu dengan menerapkan metode bootstrap aggregating (bagging) dan random feature selection [3] .Tujuannya adalah mengklasifikasikan data dalam jumlah besar.Cara kerjanya adalah meningkatkan keacakan pada model sembari meningkatkan tree. Random forest memiliki kelebihan dapat mendeteksi dan membersihkan noise dan missing value.Parameter yang digunakan pada proyek ini antara lain 
     - n_estimator merupakan jumlah pohon di struktur forest.Pada proyek, menggunakan set 50 trees(pohon)
     - max_depth: kedalaman tree(pohon). Pada proyek ini di set max depth=16
     - random_state: random generator. Pada proyek ini digunakan bernilai 55
     - n_jobs: Bernilai -1 artinya semua proses berjalan secara paralel.
-- AdaBoost adalah algoritma ensemble yang memanfaatkan bagging dan boosting untuk mengembangkan peningkatan akurasi prediktor(Kurniawati,2021).Adaboost memiliki kelebihan memiliki algoritma yang sederhana dan membutuhkan waktu yang singkat sehingga cocok dengan data proyek yang digunakan.Ada beberapa parameter yang digunakan antara lain:
+- Adaptive boosting (adaboost) merupakan salah satu dari beberapa varian pada algoritma boosting [4].Adaboost memiliki kelebihan memiliki algoritma yang sederhana dan membutuhkan waktu yang singkat sehingga cocok dengan data proyek yang digunakan.Ada beberapa parameter yang digunakan antara lain:
     - learning_rate: bobot yang diterapkan pada setiap regressor.Ditentukan learning rate sebesar 0.05
     - random_state: random generator. Pada proyek ini digunakan bernilai 55 
 
@@ -141,9 +161,13 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 
 Referensi :
 
-- Bathwal,Shubham.2022.https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction(diakses pada 20 Oktober 2022)
-- YASMIN54301.2022.https://www.kaggle.com/code/yasmin54301/flight-price-prediction(diakses pada 20 Oktober 2022)
-- Samudra,Agenda Yudha.2019.PENDEKATAN RANDOM FOREST UNTUK MODEL PERAMALAN HARGA TEMBAKAU RAJANGAN DI KABUPATEN TEMANGGUNG
+[1] Bathwal,Shubham.2022.https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction(diakses pada 20 Oktober 2022)
+
+[2] Tjiptono, 2008 .Strategi Pemasaran, Edisi III, Yogyakarta : CV. Andi Offset
+
+[3] Samudra,Agenda Yudha.2019.PENDEKATAN RANDOM FOREST UNTUK MODEL PERAMALAN HARGA TEMBAKAU RAJANGAN DI KABUPATEN   TEMANGGUNG
+
+[4] Chezian, D. R. M., & Kumar, K. S. 2014. Support Vector Machine and K-Nearest Neighbor Based Analysis for the Prediction of Hypothyroid.     International Journal of Pharma and Bio Sciences. 5(4): (B) 447- 453. 
 
 
 **---Ini adalah bagian akhir laporan---**
